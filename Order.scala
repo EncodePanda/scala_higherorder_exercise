@@ -15,7 +15,7 @@ class Bank(name: String) {
 
 case class Order(what: List[String], amount: Double) {
 
-  def merge(other: Order) = ???
+  def merge(other: Order): Order = ???
 }
 
 class Bar(name: String) {
