@@ -7,7 +7,7 @@ case class PaymentInfo(billed: Double)
 class Bank(name: String) {
 
   def proccess(toBill: Double, card: CreditCard): PaymentInfo = {
-    println("you've seriously been billed, there is no going back'")
+    println(s"you've seriously been billed with amount ${toBill}, there is no going back'")
     PaymentInfo(toBill)
   }
 
@@ -25,9 +25,7 @@ class Bar(name: String) {
 
   def order(what: String): Order =  Order(List(what), price(what))
 
-  def prepareBill(order: Order)(processor: CreditCard => PaymentInfo): CreditCard => Unit = ???
-
-
+  def prepareBill(order: Order)(processor: (Double,CreditCard) => PaymentInfo): CreditCard => Unit = ???
 }
 
 
